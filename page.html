@@ -1,0 +1,181 @@
+<!doctype html>
+<!-- 
+
+ ':         .'`                    
+'''         '''                    
+'''         '''                    
+'''         '''                    
+''' ;'''':  ''' '' :''''  ''`   ,';
+''''.   ''' ''' ''': `''' :''' '''`
+'''      '' ''' '''   '''  `'''''  
+'''    @ '' ''' '':   '''   :'''   
+`''.     '; ''' '':   '''  ''''''' 
+   ''::''`  ''' '''   ''' '''` ''''
+ 
+ Developed In-House
+ @Author: Josh Hubi 
+ -->
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BLNX</title>
+    <link rel="stylesheet" href="css/foundation.css" />
+    <link rel="stylesheet" href="css/master.css" />
+    <script src="js/vendor/modernizr.js"></script>
+    <script src="//use.typekit.net/yxk3jqb.js"></script>
+    <script>try{Typekit.load();}catch(e){}</script>
+  </head>
+  <body>
+    
+    <div class="header">
+      <div class="hug wrapper">
+
+          <h1 class="logo">
+            <a href="index.html">Blnx</a>
+          </h1>
+          
+          <div class="menu-tab"></div>
+
+          <ul class="menu">
+            <li class="selected"><a href="#">Learn</a></li>
+            <li><a href="#">Financial Info</a></li>
+            <li><a href="#">Governance</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Investor Contacts</a></li>
+          </ul>
+
+      </div>     
+    </div>
+
+    <div class="spacebar"></div>
+
+    <div class="graybar">
+      <div class="hug hero sub large-8 medium-8">
+            <div class="large-4 medium-4 columns">
+              <div class="callout one">
+                <a href="#"></a>
+                <div>
+                  <h1>Learn</h1>
+                </div>
+              </div>
+            </div>
+            <div class="large-4 medium-4 columns">
+              <div class="callout two">
+                <a href="#"></a>
+                <div>
+                  <h1>Financial Info</h1>
+                </div>
+              </div>
+            </div>
+            <div class="large-4 medium-4 columns">
+              <div class="callout three">
+                <a href="#"></a>
+                <div>
+                  <h1>Governance</h1>
+                </div>
+              </div>
+            </div>
+      </div>
+    </div>
+
+    <div class="hug content page">
+
+      <div class="large-15 medium-15 columns">   
+
+        <div class="large-12 columns bio">
+          <h1>Learn</h1>
+          <p>blinkx is a broad digital media technology, distribution and monetization platform that connects consumers, advertisers and content across four screens. At its foundation Blinkx is powered by CORE, the world’s most advanced video engine, conceived at Cambridge University, enhanced by $150M in R&D over 15 years, and protected by 111 patents.</p>
+        </div>
+      
+        <div class="large-3 medium-3 columns clear">
+          <ul class="menu">
+            <li class="selected"><a href="#">Overview</a></li>
+            <li><a href="#">Leadership</a></li>
+            <li><a href="#">Brand Safety</a></li>
+            <li><a href="#">Technology</a></li>
+          </ul>
+        </div>
+
+        <div class="large-9 medium-9 columns box">
+          <div class="">
+            <h1>Overview</h1>
+            <p>Through its flagship site, blinkx.com, blinkx pioneered video search on the Internet, developing an engine based on technology that was conceived at Cambridge University, enhanced by $150M in R&D over 15 years, and is now protected by 111 patents. Today, blinkx has an index of over 35 million hours of searchable video and more than 900 media partnerships, including national broadcasters, commercial media giants, and private video libraries. In addition, blinkx powers video search for many of the world’s most frequented sites, including AOL and Lycos. blinkx continues to pioneer innovative approaches to digital video distribution, expanding into mobile video and Connected TV through partnerships with Samsung, Sony, Roku and other industry leaders.
+            </p>
+
+            <p>
+            In 2011, blinkx acquired Burst Media and PVMG, well-established online media companies that represent top independent Web publishers, and began providing video solutions to their partners. In 2013, blinkx acquired Grab Media, a leading online video content syndication and advertising platform, enabling the company to add incremental audience and augment its relationship with advertisers, publishers and content providers. Today, blinkx has a combined reach of 75% of the online audience in the United States, and measures 168 million unique users in the U.S. every month.
+            
+            </p>
+            blinkx is headquartered in San Francisco, CA and London, England.
+            <p>
+
+            </p>
+          </div>
+        </div>
+      
+      </div>     
+    </div>
+
+    <div class="footer">
+      <div class="hug wrapper">
+        <div class="left">
+          <h4>© 2015 blinkx. All Rights Reserved</h4>
+          <ul>
+            <li><a href="#">Aim Rule 26</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Press Kit</a></li>
+          </ul>
+        </div>
+
+        <div class="right">
+          <ul>
+            <li><a href="#">Learn</a></li>
+            <li><a href="#">Financial Info</a></li>
+            <li><a href="#">Governance</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Investor Contacts</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script>
+
+      (function($) {
+          $.fn.clickToggle = function(func1, func2) {
+              var funcs = [func1, func2];
+              this.data('toggleclicked', 0);
+              this.click(function() {
+                  var data = $(this).data();
+                  var tc = data.toggleclicked;
+                  $.proxy(funcs[tc], this)();
+                  data.toggleclicked = (tc + 1) % 2;
+              });
+              return this;
+          };
+      }(jQuery));
+
+      $(document).foundation();
+      $(document).ready(function(){
+        $.getJSON('https://finance.google.com/finance/info?client=ig&q=LON:BLNX&callback=?',function(response){
+          var stockInfo = response[0];
+          var stockString ='<a target="_blank" href="http://finance.yahoo.com/q?d=t&s=BLNX.L"><span class="stockPrice">'+stockInfo.l+'</span>';
+          stockString +='<span class="stockChange"> ('+stockInfo.c+')</span>';
+          stockString +='<span> at</span> <span class="stockTime">'+stockInfo.ltt+'</span></a>';
+          $('.stock').append(stockString);
+        });
+
+        $('.header .menu-tab').clickToggle(function() {
+          $('.header .menu').addClass('display');
+          $('.header .menu-tab').addClass('menu-tab-close');
+        }, function() {
+          $('.header .menu').removeClass('display');  
+          $('.header .menu-tab').removeClass('menu-tab-close');     
+        });   
+      });
+    </script>
+  </body>
+</html>
